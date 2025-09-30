@@ -1,0 +1,213 @@
+/* === General Styles === */
+body {
+  margin: 0;
+  font-family: 'Share Tech Mono', monospace;
+  background-color: #0b0d14;
+  color: #e0e0e0;
+}
+
+/* Neon glow variables */
+:root {
+  --primary: #00fff7;
+  --accent: #ff00aa;
+}
+
+/* === Navbar === */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.navbar .logo {
+  display: flex;
+  align-items: center;
+}
+.navbar .logo img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--primary);
+}
+.navbar h1 {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--primary);
+  margin: 0;
+}
+.navbar nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #e0e0e0;
+  transition: color 0.3s;
+}
+.navbar nav a:hover {
+  color: var(--primary);
+}
+
+/* === Hero Section === */
+.hero {
+  text-align: center;
+  padding: 5rem 2rem;
+  background: radial-gradient(circle at top, rgba(0,255,247,0.2) 0%, transparent 60%);
+}
+.hero h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5rem;
+  color: var(--primary);
+}
+.hero .accent {
+  color: var(--accent);
+}
+.hero .btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary);
+  color: #0b0d14;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary);
+  transition: box-shadow 0.3s, background-color 0.3s;
+}
+.hero .btn:hover {
+  background-color: var(--accent);
+  box-shadow: 0 0 15px var(--accent), 0 0 30px var(--accent);
+}
+
+/* === Sections === */
+.about, .projects, .services, .contact {
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.about h2, .projects h2, .services h2, .contact h2 {
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+  color: var(--primary);
+}
+.about .skills {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0;
+}
+.about .skills li {
+  background-color: rgba(255,255,255,0.05);
+  color: var(--primary);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  box-shadow: 0 0 5px var(--primary);
+}
+
+/* === Projects === */
+.projects .project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.card {
+  background-color: rgba(255,255,255,0.03);
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  padding-bottom: 1rem;
+  box-shadow: 0 0 10px rgba(0,255,247,0.1);
+  transition: transform 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+.card h3 {
+  margin: 0.5rem 0;
+  color: var(--accent);
+}
+.card p {
+  padding: 0 1rem;
+}
+.card .btn {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  box-shadow: 0 0 5px var(--accent), 0 0 15px var(--accent);
+}
+
+/* === Services === */
+.services {
+  text-align: center;
+}
+.services .btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 0 5px var(--accent), 0 0 15px var(--accent);
+}
+
+/* === Contact === */
+.contact {
+  text-align: center;
+}
+.contact .socials a {
+  display: inline-block;
+  margin: 0 10px;
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.contact .socials a:hover {
+  color: var(--accent);
+}
+
+/* === Footer === */
+.footer {
+  background-color: #000;
+  color: #888;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* === Services List Centered === */
+.service-list {
+  list-style: none; /* remove default bullets */
+  padding: 0;
+  margin: 1.5rem auto; /* auto left/right to center */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center the items */
+  gap: 0.8rem;
+  max-width: 400px; /* optional, limits width for better alignment */
+  text-align: left; /* keep text aligned left inside each item */
+}
+
+.service-list li {
+  font-size: 1.1rem;
+  color: var(--primary);
+  text-shadow: 0 0 5px var(--primary), 0 0 10px var(--primary);
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* space between emoji and text */
+}
+
